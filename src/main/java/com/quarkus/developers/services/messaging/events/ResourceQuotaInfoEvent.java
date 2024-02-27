@@ -8,7 +8,7 @@ import java.util.Map;
 
 @Data
 @Builder
-public class ResourceQuotaInfo {
+public class ResourceQuotaInfoEvent {
     private String name;
     private String namespace;
     private Map<String, BigDecimal> specHard;
