@@ -1,7 +1,7 @@
 package com.quarkus.developers.services.messaging.consumers;
 
 import com.quarkus.common.data.events.ClusterResourceEvent;
-import com.quarkus.developers.services.persistance.PersistService;
+import com.quarkus.developers.services.persistance.PersistServiceFacade;
 import io.quarkus.arc.properties.IfBuildProperty;
 import jakarta.enterprise.context.ApplicationScoped;
 import lombok.extern.slf4j.Slf4j;
@@ -14,9 +14,9 @@ import java.util.concurrent.CompletionStage;
 @ApplicationScoped
 @IfBuildProperty(name = "messaging.consume-from.kafka", stringValue = "true")
 public class KafkaConsumer {
-    private final PersistService service;
+    private final PersistServiceFacade service;
 
-    public KafkaConsumer(PersistService service) {
+    public KafkaConsumer(PersistServiceFacade service) {
         this.service = service;
     }
 

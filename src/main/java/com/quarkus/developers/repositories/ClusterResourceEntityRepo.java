@@ -1,9 +1,9 @@
 package com.quarkus.developers.repositories;
 
-import com.quarkus.developers.entities.ResourceQuotaInfoEntity;
+import com.quarkus.developers.entities.ClusterResourceEntity;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
-public class ResourceQuotaInfoRepo implements PanacheRepository<ResourceQuotaInfoEntity> {
+public class ClusterResourceEntityRepo implements PanacheRepository<ClusterResourceEntity> {
 }

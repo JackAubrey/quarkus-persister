@@ -1,7 +1,7 @@
 package com.quarkus.developers.services.messaging.consumers;
 
 import com.quarkus.common.data.events.ClusterResourceEvent;
-import com.quarkus.developers.services.persistance.PersistService;
+import com.quarkus.developers.services.persistance.PersistServiceFacade;
 import io.quarkus.arc.properties.IfBuildProperty;
 import io.vertx.core.json.JsonObject;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -16,9 +16,9 @@ import java.util.concurrent.CompletionStage;
 @ApplicationScoped
 @IfBuildProperty(name = "messaging.consume-from.amqp", stringValue = "true")
 public class AmqpConsumer {
-    private final PersistService service;
+    private final PersistServiceFacade service;
 
-    public AmqpConsumer(PersistService service) {
+    public AmqpConsumer(PersistServiceFacade service) {
         this.service = service;
     }
 
